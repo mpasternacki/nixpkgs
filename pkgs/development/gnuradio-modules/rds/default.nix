@@ -12,6 +12,7 @@
 , boost
 , gmp
 , icu
+, spdlog
 }:
 
 let
@@ -19,6 +20,7 @@ let
     "3.7" = "1.1.0";
     "3.8" = "3.8.0";
     "3.9" = null;
+    "3.10" = "3.10";
   }.${gnuradio.versionAttr.major};
   src = fetchFromGitHub {
     owner = "bastibl";
@@ -28,15 +30,20 @@ let
       "3.7" = "0jkzchvw0ivcxsjhi1h0mf7k13araxf5m4wi5v9xdgqxvipjzqfy";
       "3.8" = "+yKLJu2bo7I2jkAiOdjvdhZwxFz9NFgTmzcLthH9Y5o=";
       "3.9" = null;
+      "3.10" = "sha256-86hPAUjdApCMCNPlt79ShNIuZrtc73O0MxTjgTuYo+U=";
     }.${gnuradio.versionAttr.major};
   };
 in mkDerivation {
   pname = "gr-rds";
   inherit version src;
-  disabledForGRafter = "3.9";
+  disabledForGRafter = "3.11";
 
   buildInputs = [
-    log4cpp
+    (if (lib.versionAtLeast gnuradio.versionAttr.major "3.10") then
+      spdlog
+     else
+      log4cpp
+    )
     mpir
     boost
     gmp
@@ -44,12 +51,18 @@ in mkDerivation {
   ] ++ lib.optionals (gnuradio.hasFeature "gr-ctrlport") [
     thrift
     python.pkgs.thrift
+  ] ++ lib.optionals (lib.versionAtLeast gnuradio.versionAttr.major "3.9") [
+    python.pkgs.numpy
   ];
 
   nativeBuildInputs = [
     cmake
     pkg-config
-    swig
+    (if (lib.versionAtLeast gnuradio.versionAttr.major "3.9") then
+      python.pkgs.pybind11
+    else
+      swig
+    )
     python
   ];
 

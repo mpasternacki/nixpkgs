@@ -19,30 +19,45 @@
 , libbladeRF
 , rtl-sdr
 , soapysdr-with-plugins
+, spdlog
+, libsndfile
 }:
 
 let
   version = {
     "3.7" = "0.1.5";
     "3.8" = "0.2.3";
+    "3.9" = "0.3.0";            # FIXME
+    "3.10" = "0.3.0";           # FIXME
   }.${gnuradio.versionAttr.major};
   src = fetchgit {
     url = "git://git.osmocom.org/gr-osmosdr";
-    rev = "v${version}";
+    rev = {
+      "3.7" = "v${version}";
+      "3.8" = "v${version}";
+      "3.9" = "a100eb024c0210b95e4738b6efd836d48225bd03";
+      "3.10" = "a100eb024c0210b95e4738b6efd836d48225bd03";
+    }.${gnuradio.versionAttr.major};
     sha256 = {
       "3.7" = "0bf9bnc1c3c4yqqqgmg3nhygj6rcfmyk6pybi27f7461d2cw1drv";
       "3.8" = "sha256-ZfI8MshhZOdJ1U5FlnZKXsg2Rsvb6oKg943ZVYd/IWo=";
+      "3.9" = "sha256-cYa9TTStZ4+jIsIeUmyF1oXFZEzv40VBKN47+719Zd4=";
+      "3.10" = "sha256-cYa9TTStZ4+jIsIeUmyF1oXFZEzv40VBKN47+719Zd4=";
     }.${gnuradio.versionAttr.major};
   };
 in mkDerivation {
   pname = "gr-osmosdr";
   inherit version src;
-  disabledForGRafter = "3.9";
+  disabledForGRafter = "3.11";
 
   outputs = [ "out" "dev" ];
 
   buildInputs = [
-    log4cpp
+    (if (lib.versionAtLeast gnuradio.versionAttr.major "3.10") then
+      spdlog
+     else
+      log4cpp
+    )
     mpir
     boost
     fftwFloat
@@ -58,7 +73,12 @@ in mkDerivation {
   ] ++ lib.optionals (gnuradio.hasFeature "gr-ctrlport") [
     thrift
     python.pkgs.thrift
-  ];
+  ] ++ lib.optionals (lib.versionAtLeast gnuradio.versionAttr.major "3.9") [
+    python.pkgs.numpy
+    libsndfile
+  ]
+
+  ;
   cmakeFlags = [
     (if (gnuradio.hasFeature "python-support") then
       "-DENABLE_PYTHON=ON"
@@ -69,7 +89,11 @@ in mkDerivation {
   nativeBuildInputs = [
     cmake
     pkg-config
-    swig
+    (if (lib.versionAtLeast gnuradio.versionAttr.major "3.9") then
+      python.pkgs.pybind11
+    else
+      swig
+    )
   ] ++ lib.optionals (gnuradio.hasFeature "python-support") [
       (if (gnuradio.versionAttr.major == "3.7") then
         python.pkgs.cheetah
