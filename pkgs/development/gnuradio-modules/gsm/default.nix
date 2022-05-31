@@ -21,7 +21,7 @@ mkDerivation {
   src = fetchFromGitHub {
     owner = "bkerler";          # fork of ptrkrysik
     repo = "gr-gsm";
-    rev = "cd59fb949124c9660d8182de131fecf249389bd6";
+    rev = "cd59fb949124c9660d8182de131fecf249389bd6"; # maint-3.10 branch
     sha256 = "sha256-SYnKcoPvCvb1nOJ1UzKfvq+I8v4YPXpKve5ivCbJ1A4=";
   };
   disabledForGRafter = "3.12";
@@ -52,26 +52,8 @@ mkDerivation {
 
   propagatedBuildInputs = lib.optionals (lib.versionAtLeast gnuradio.versionAttr.major "3.9") [
     python.pkgs.numpy
-    # libsndfile
-
-    # needed for grgsm_livemon:
-    python.pkgs.Mako
-    python.pkgs.pyyaml
-    python.pkgs.matplotlib
   ];
 
-  cmakeFlags = [
-    "-DENABLE_GRC=ON"
-    "-DENABLE_GRCC=ON"
-  ];
-
-  # grcc tries to write a cache file and there seems to be no easy way
-  # to prevent it; also maybe fix importing own modules by grcc
-  preBuild = ''
-    export HOME="''${TMP:-/tmp}"
-    export PYTHONPATH="$out/${python.sitePackages}:$PYTHONPATH"
-    env|sort
-  '';
 
   meta = with lib; {
     description = "Gnuradio block for gsm";
@@ -80,4 +62,21 @@ mkDerivation {
     platforms = platforms.linux;
     maintainers = with maintainers; [ mog ];
   };
+
+  # TODO: grgsm_livemon
+  #
+  # python.pkgs.Mako
+  # python.pkgs.pyyaml
+  # python.pkgs.matplotlib
+  # cmakeFlags = [
+  #   "-DENABLE_GRC=ON"
+  #   "-DENABLE_GRCC=ON"
+  # ];
+  # # grcc tries to write a cache file and there seems to be no easy way
+  # # to prevent it; also maybe fix importing own modules by grcc
+  # preBuild = ''
+  #   export HOME="''${TMP:-/tmp}"
+  # '';
 }
+
+  
