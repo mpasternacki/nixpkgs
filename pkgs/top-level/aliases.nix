@@ -96,6 +96,7 @@ mapAliases ({
   awesome-4-0 = awesome; # Added 2022-05-05
   aws-okta = throw "aws-okta is on indefinite hiatus. See https://github.com/segmentio/aws-okta/issues/278"; # Added 2022-04-05;
   axoloti = throw "axoloti has been removed: abandoned by upstream"; # Added 2022-05-13
+  azure-vhd-utils = throw "azure-vhd-utils has been dropped due to the lack of maintenance from upstream since 2018"; # Added 2022-06-03
   azureus = throw "azureus is now known as vuze and the version in nixpkgs was really outdated"; # Added 2021-08-02
 
   ### B ###
@@ -128,6 +129,7 @@ mapAliases ({
   brackets = throw "brackets has been removed, it was unmaintained and had open vulnerabilities"; # Added 2021-01-24
   bridge_utils = throw "'bridge_utils' has been renamed to/replaced by 'bridge-utils'"; # Converted to throw 2022-02-22
   bro = zeek; # Added 2019-09-29
+  btops = throw "btops has been dropped due to the lack of maintenance from upstream since 2017"; # Added 2022-06-02
   btrfsProgs = throw "'btrfsProgs' has been renamed to/replaced by 'btrfs-progs'"; # Converted to throw 2022-02-22
   bud = throw "bud has been removed: abandoned by upstream"; # Added 2022-03-14
   inherit (libsForQt5.mauiPackages) buho; # added 2022-05-17
@@ -209,6 +211,7 @@ mapAliases ({
   couchdb = throw "couchdb was removed from nixpkgs, use couchdb3 instead"; # Added 2021-03-03
   couchdb2 = throw "couchdb2 was removed from nixpkgs, use couchdb3 instead"; # Added 2021-03-03
   coreclr = throw "coreclr has been removed from nixpkgs, use dotnet-sdk instead"; # added 2022-06-12
+  corgi = throw "corgi has been dropped due to the lack of maintanence from upstream since 2018"; # Added 2022-06-02
   cpp-gsl = throw "'cpp-gsl' has been renamed to/replaced by 'microsoft_gsl'"; # Converted to throw 2022-02-22
   cpp_ethereum = throw "cpp_ethereum has been removed; abandoned upstream"; # Added 2020-11-30
   cpuminer-multi = throw "cpuminer-multi has been removed: deleted by upstream"; # Added 2022-01-07
@@ -264,7 +267,8 @@ mapAliases ({
   cudnn_cudatoolkit_9_0 = throw "cudnn_cudatoolkit_9_0 has been removed in favor of newer versions"; # Added 2021-04-18
   cudnn_cudatoolkit_9_1 = throw "cudnn_cudatoolkit_9_1 has been removed in favor of newer versions"; # Added 2021-04-18
   cudnn_cudatoolkit_9_2 = throw "cudnn_cudatoolkit_9_2 has been removed in favor of newer versions"; # Added 2021-04-18
-
+  cura_stable = throw "cura_stable was removed because it was broken and used Python 2"; # added 2022-06-05
+  curl_unix_socket = throw "curl_unix_socket has been dropped due to the lack of maintanence from upstream since 2015"; # Added 2022-06-02
   cutensor = throw "cutensor is now part of cudaPackages*"; # Added 2022-04-04
   cutensor_cudatoolkit_10 = throw "cutensor* is now part of cudaPackages*"; # Added 2022-04-04
   cutensor_cudatoolkit_10_1 = throw "cutensor* is now part of cudaPackages*"; # Added 2022-04-04
@@ -338,6 +342,8 @@ mapAliases ({
   docbook_xml_xslt = throw "'docbook_xml_xslt' has been renamed to/replaced by 'docbook_xsl'"; # Converted to throw 2022-02-22
   doh-proxy = throw "doh-proxy has been removed because upstream abandoned it and its depedencies where removed."; # Added 2022-03-30
   docker_compose = throw "'docker_compose' has been renamed to/replaced by 'docker-compose'"; # Converted to throw 2022-02-22
+  docker-compose_2 = throw "'docker-compose_2' has been renamed to 'docker-compose'"; # Added 2022-06-05
+  docker-edge = throw "'docker-edge' has been removed, it was an alias for 'docker'"; # Added 2022-06-05
   dolphinEmu = dolphin-emu; # Added 2021-11-10
   dolphinEmuMaster = dolphin-emu-beta; # Added 2021-11-10
   dotnet-netcore = dotnet-runtime; # Added 2021-10-07
@@ -381,6 +387,7 @@ mapAliases ({
 
   enblendenfuse = throw "'enblendenfuse' has been renamed to/replaced by 'enblend-enfuse'"; # Converted to throw 2022-02-22
   encryptr = throw "encryptr was removed because it reached end of life"; # Added 2022-02-06
+  envdir = throw "envdir has been dropped due to the lack of maintenance from upstream since 2018"; # Added 2022-06-03
   envelope = throw "envelope has been removed from nixpkgs, as it was unmaintained"; # Added 2021-08-05
   epoxy = libepoxy; # Added 2021-11-11
   epsxe = throw "epsxe has been removed from nixpkgs, as it was unmaintained."; # added 2021-12-15
@@ -449,6 +456,7 @@ mapAliases ({
 
   g4py = python3Packages.geant4; # Added 2020-06-06
   gaia = throw "gaia has been removed because it seems abandoned upstream and uses no longer supported dependencies"; # Added 2020-06-06
+  gawp = throw "gawp has been dropped due to the lack of maintanence from upstream since 2017"; # Added 2022-06-02
   gdal_1_11 = throw "gdal_1_11 was removed. Use gdal instead"; # Added 2021-04-03
   gdb-multitarget = throw "'gdb-multitarget' has been renamed to/replaced by 'gdb'"; # Converted to throw 2022-02-22
   gdk_pixbuf = throw "'gdk_pixbuf' has been renamed to/replaced by 'gdk-pixbuf'"; # Converted to throw 2022-02-22
@@ -457,6 +465,7 @@ mapAliases ({
   gfm = throw "gfm has been removed"; # Added 2021-01-15
   giblib = throw " giblib has been removed from nixpkgs because upstream is gone"; # Added 2022-01-23
   giflib_4_1 = throw "giflib_4_1 has been removed; use giflib instead"; # Added 2020-02-12
+  git-annex-remote-b2 = throw "git-annex-remote-b2 has been dropped due to the lack of maintanence from upstream since 2016"; # Added 2022-06-02
   git-bz = throw "giz-bz has been removed from nixpkgs as it is stuck on python2"; # Added 2022-01-01
 
   gitAndTools = self // {
@@ -509,6 +518,7 @@ mapAliases ({
   gobby5 = gobby; # Added 2021-02-01
   gobjectIntrospection = throw "'gobjectIntrospection' has been renamed to/replaced by 'gobject-introspection'"; # Converted to throw 2022-02-22
   gogoclient = throw "gogoclient has been removed, because it was unmaintained"; # Added 2021-12-15
+  goklp = throw "goklp has been dropped due to the lack of maintanence from upstream since 2017"; # Added 2022-06-02
   golly-beta = throw "golly-beta has been removed: use golly instead"; # Added 2022-03-21
   goimports = throw "'goimports' has been renamed to/replaced by 'gotools'"; # Converted to throw 2022-02-22
   gometalinter = throw "gometalinter was abandoned by upstream. Consider switching to golangci-lint instead"; # Added 2020-04-23
@@ -517,7 +527,9 @@ mapAliases ({
   google-gflags = gflags; # Added 2019-07-25
   google-musicmanager = throw "google-musicmanager has been removed because Google Play Music was discontinued"; # Added 2021-03-07
   google-music-scripts = throw "google-music-scripts has been removed because Google Play Music was discontinued"; # Added 2021-03-07
+  go-mk = throw "go-mk has been dropped due to the lack of maintanence from upstream since 2015"; # Added 2022-06-02
   go-pup = throw "'go-pup' has been renamed to/replaced by 'pup'"; # Converted to throw 2022-02-22
+  go-repo-root = throw "go-repo-root has been dropped due to the lack of maintanence from upstream since 2014"; # Added 2022-06-02
   gpgstats = throw "gpgstats has been removed: upstream is gone"; # Added 2022-02-06
   gpshell = throw "gpshell has been removed, because it was unmaintained in nixpkgs"; # added 2021-12-17
 
@@ -526,6 +538,8 @@ mapAliases ({
   graalvm8 = throw "graalvm8-ce has been removed by upstream"; # Added 2021-10-19
   graalvm8-ee = throw "graalvm8-ee has been removed because it is unmaintained"; # Added 2022-04-15
   graalvm11-ee = throw "graalvm11-ee has been removed because it is unmaintained"; # Added 2022-04-15
+  gradio = throw "gradio has been removed because it is unmaintained, use shortwave instead"; # Added 2022-06-03
+  grafana-mimir = throw "'grafana-mimir' has been renamed to/replaced by 'mimir'"; # Added 2022-06-07
   gr-ais = gnuradio3_7.pkgs.ais; # Added 2019-05-27, changed 2020-10-16
   grantlee5 = throw "'grantlee5' has been renamed to/replaced by 'libsForQt5.grantlee'"; # Converted to throw 2022-02-22
   gr-gsm = gnuradio3_7.pkgs.gsm; # Added 2019-05-27, changed 2020-10-16
@@ -534,6 +548,7 @@ mapAliases ({
   gr-nacl = gnuradio3_7.pkgs.nacl; # Added 2019-05-27, changed 2020-10-16
   gr-osmosdr = gnuradio3_7.pkgs.osmosdr; # Added 2019-05-27, changed 2020-10-16
   gr-rds = gnuradio3_7.pkgs.rds; # Added 2019-05-27, changed 2020-10-16
+  grv = "grv has been dropped due to the lack of maintanence from upstream since 2019"; # Added 2022-06-01
   gsettings_desktop_schemas = throw "'gsettings_desktop_schemas' has been renamed to/replaced by 'gsettings-desktop-schemas'"; # Converted to throw 2022-02-22
   gtk_doc = throw "'gtk_doc' has been renamed to/replaced by 'gtk-doc'"; # Converted to throw 2022-02-22
   gtklick = throw "gtklick has been removed from nixpkgs as the project is stuck on python2"; # Added 2022-01-01
@@ -570,8 +585,10 @@ mapAliases ({
 
   ### I ###
 
+  i3cat = throw "i3cat has been dropped due to the lack of maintanence from upstream since 2016"; # Added 2022-06-02
   iana_etc = throw "'iana_etc' has been renamed to/replaced by 'iana-etc'"; # Converted to throw 2022-02-22
   iasl = throw "iasl has been removed, use acpica-tools instead"; # Added 2021-08-08
+  ical2org = throw "ical2org has been dropped due to the lack of maintanence from upstream since 2018"; # Added 2022-06-02
   icecat-bin = throw "icecat-bin has been removed, the binary builds are not maintained upstream"; # Added 2022-02-15
   icedtea8_web = adoptopenjdk-icedtea-web; # Added 2019-08-21
   icedtea_web = adoptopenjdk-icedtea-web; # Added 2019-08-21
@@ -635,6 +652,7 @@ mapAliases ({
   keepnote = throw "keepnote has been removed from nixpkgs, as it is stuck on python2"; # Added 2022-01-01
   kerberos = libkrb5; # moved from top-level 2021-03-14
   kexectools = kexec-tools; # Added 2021-09-03
+  kexpand = "kexpand awless has been dropped due to the lack of maintanence from upstream since 2017"; # Added 2022-06-01
   keybase-go = throw "'keybase-go' has been renamed to/replaced by 'keybase'"; # Converted to throw 2022-02-22
   keysmith = libsForQt5.plasmaMobileGear.keysmith; # Added 2021-07-14
   kgx = gnome-console; # Added 2022-02-19
@@ -644,6 +662,7 @@ mapAliases ({
   kinetic-cpp-client = throw "kinetic-cpp-client has been removed from nixpkgs, as it's abandoned"; # Added 2020-04-28
   kino = throw "kino has been removed because it was broken and abandoned"; # Added 2021-04-25
   knockknock = throw "knockknock has been removed from nixpkgs because the upstream project is abandoned"; # Added 2022-01-01
+  kodestudio = throw "kodestudio has been removed from nixpkgs, as the nix package has been long unmaintained and out of date."; # Added 2022-06-07
   kodiGBM = kodi-gbm;
   kodiPlain = kodi;
   kodiPlainWayland = kodi-wayland;
@@ -671,6 +690,7 @@ mapAliases ({
   libcroco = throw "libcroco has been removed as it's no longer used in any derivations"; # Added 2020-03-04
   libdbusmenu-glib = throw "'libdbusmenu-glib' has been renamed to/replaced by 'libdbusmenu'"; # Converted to throw 2022-02-22
   libdbusmenu_qt5 = throw "'libdbusmenu_qt5' has been renamed to/replaced by 'libsForQt5.libdbusmenu'"; # Converted to throw 2022-02-22
+  libdigidoc = throw "'libdigidoc' is unused in nixpkgs, deprecated and archived by upstream, use 'libdigidocpp' instead"; # Added 2022-06-03
   liberation_ttf_v1_from_source = throw "'liberation_ttf_v1_from_source' has been renamed to/replaced by 'liberation_ttf_v1'"; # Converted to throw 2022-02-22
   liberation_ttf_v2_from_source = throw "'liberation_ttf_v2_from_source' has been renamed to/replaced by 'liberation_ttf_v2'"; # Converted to throw 2022-02-22
   liberationsansnarrow = throw "'liberationsansnarrow' has been renamed to/replaced by 'liberation-sans-narrow'"; # Converted to throw 2022-02-22
@@ -815,11 +835,13 @@ mapAliases ({
   manpages = throw "'manpages' has been renamed to/replaced by 'man-pages'"; # Converted to throw 2022-02-22
   marathon = throw "marathon has been removed from nixpkgs, as it's unmaintained"; # Added 2020-08-15
   mariadb-client = hiPrio mariadb.client; #added 2019.07.28
+  marp = throw "marp has been removed from nixpkgs, as it's unmaintained and has security issues"; # Added 2022-06-04
   matcha = throw "matcha was renamed to matcha-gtk-theme"; # added 2020-05-09
   mathics = throw "mathics has been removed from nixpkgs, as it's unmaintained"; # Added 2020-08-15
   matrique = spectral; # Added 2020-01-27
   maui-nota = libsForQt5.mauiPackages.nota; # added 2022-05-17
   mcgrid = throw "mcgrid has been removed from nixpkgs, as it's not compatible with rivet 3"; # Added 2020-05-23
+  mcomix3 = mcomix; # Added 2022-06-05
   mediatomb = throw "mediatomb is no longer maintained upstream, use gerbera instead"; # added 2022-01-04
   meme = meme-image-generator; # Added 2021-04-21
   memtest86 = throw "'memtest86' has been renamed to/replaced by 'memtest86plus'"; # Converted to throw 2022-02-22
@@ -854,6 +876,7 @@ mapAliases ({
   mpc_cli = mpc-cli; # moved from top-level 2022-01-24
   mpd_clientlib = libmpdclient; # Added 2021-02-11
   mpich2 = throw "'mpich2' has been renamed to/replaced by 'mpich'"; # Converted to throw 2022-02-22
+  mqtt-bench = throw "mqtt-bench has been dropped due to the lack of maintenance from upstream since 2017"; # Added 2022-06-02
   msf = throw "'msf' has been renamed to/replaced by 'metasploit'"; # Converted to throw 2022-02-22
   multimc = throw "multimc was removed from nixpkgs; use polymc instead (see https://github.com/NixOS/nixpkgs/pull/154051 for more information)"; # Added 2022-01-08
   mumble_git = pkgs.mumble; # Added 2019-08-01
@@ -874,6 +897,7 @@ mapAliases ({
   mx = throw "graalvm8 and its tools were deprecated in favor of graalvm8-ce"; # Added 2021-10-15
   mxisd = throw "mxisd has been removed from nixpkgs as it has reached end of life, see https://github.com/kamax-matrix/mxisd/blob/535e0a5b96ab63cb0ddef90f6f42c5866407df95/EOL.md#end-of-life-notice . ma1sd may be a suitable alternative"; # Added 2021-04-15
   mysqlWorkbench = throw "'mysqlWorkbench' has been renamed to/replaced by 'mysql-workbench'"; # Converted to throw 2022-02-22
+  myxer = throw "Myxer has been removed from nixpkgs, as it has been unmaintained since Jul 31, 2021"; # Added 2022-06-08
 
   ### N ###
 
@@ -909,9 +933,11 @@ mapAliases ({
   nix_2_6 = nixVersions.nix_2_6;
   nixopsUnstable = nixops_unstable; # Added 2022-03-03
   nixosTest = testers.nixosTest; # Added 2022-05-05
+  nixui = throw "nixui has been removed from nixpkgs, due to the project being unmaintained"; # Added 2022-05-23
   nmap-unfree = nmap; # Added 2021-04-06
   nmap-graphical = throw "nmap graphical support has been removed due to its python2 dependency"; # Added 2022-04-26
   nmap_graphical = throw "nmap graphical support has been removed due to its python2 dependency"; # Modified 2022-04-26
+  nodejs-10_x = throw "nodejs-10_X has been removed. Use a newer version instead."; # Added 2022-05-31
   nologin = throw "'nologin' has been renamed to/replaced by 'shadow'"; # Converted to throw 2022-02-22
   nomad_1_1 = throw "nomad_1_1 has been removed because it's outdated. Use a a newer version instead"; # Added 2022-05-22
   nordic-polar = throw "nordic-polar was removed on 2021-05-27, now integrated in nordic"; # Added 2021-05-27
@@ -1059,6 +1085,7 @@ mapAliases ({
   pocketsphinx = throw "pocketsphinx has been removed: unmaintained"; # Added 2022-04-24
   polarssl = throw "'polarssl' has been renamed to/replaced by 'mbedtls'"; # Converted to throw 2022-02-22
   polysh = throw "polysh has been removed from nixpkgs as the upstream has abandoned the project"; # Added 2022-01-01
+  pond = throw "pond has been dropped due to the lack of maintanence from upstream since 2016"; # Added 2022-06-02
   poppler_qt5 = throw "'poppler_qt5' has been renamed to/replaced by 'libsForQt5.poppler'"; # Converted to throw 2022-02-22
   powerdns = pdns; # Added 2022-03-28
   portaudio2014 = throw "'portaudio2014' has been removed"; # Added 2022-05-10
@@ -1098,7 +1125,9 @@ mapAliases ({
   proglodyte-wasm = throw "proglodyte-wasm has been removed from nixpkgs, because it is unmaintained since 5 years with zero github stars"; # Added 2021-06-30
   proj_5 = throw "Proj-5 has been removed from nixpkgs, use proj instead"; # Added 2021-04-12
   prometheus-cups-exporter = throw "outdated and broken by design; removed by developer"; # Added 2021-03-16
+  prometheus-dmarc-exporter = dmarc-metrics-exporter; # added 2022-05-31
   prometheus-mesos-exporter = throw "prometheus-mesos-exporter is deprecated and archived by upstream"; # Added 2022-04-05
+  prometheus-unifi-exporter = throw "prometheus-unifi-exporter is deprecated and archived by upstream, use unifi-poller instead"; # Added 2022-06-03
   proxytunnel = throw "proxytunnel has been removed from nixpkgs, because it has not been update upstream since it was added to nixpkgs in 2008 and has therefore bitrotted."; # added 2021-12-15
   pulseaudio-hsphfpd = throw "pulseaudio-hsphfpd upstream has been abandoned"; # Added 2022-03-23
   pulseaudio-modules-bt = throw "pulseaudio-modules-bt has been abandoned, and is superseded by pulseaudio's native bt functionality"; # Added 2022-04-01
@@ -1201,6 +1230,7 @@ mapAliases ({
   s6Networking = throw "'s6Networking' has been renamed to/replaced by 's6-networking'"; # Converted to throw 2022-02-22
   s6PortableUtils = throw "'s6PortableUtils' has been renamed to/replaced by 's6-portable-utils'"; # Converted to throw 2022-02-22
   sagemath = throw "'sagemath' has been renamed to/replaced by 'sage'"; # Converted to throw 2022-02-22
+  salut_a_toi = throw "salut_a_toi was removed because it was broken and used Python 2"; # added 2022-06-05
   sam = throw "'sam' has been renamed to/replaced by 'deadpixi-sam'"; # Converted to throw 2022-02-22
   samsungUnifiedLinuxDriver = throw "'samsungUnifiedLinuxDriver' has been renamed to/replaced by 'samsung-unified-linux-driver'"; # Converted to throw 2022-02-22
   sane-backends-git = sane-backends; # Added 2021-02-19
@@ -1314,7 +1344,6 @@ mapAliases ({
   telepathy_mission_control = throw "'telepathy_mission_control' has been renamed to/replaced by 'telepathy-mission-control'"; # Converted to throw 2022-02-22
   telepathy_qt = throw "'telepathy_qt' has been renamed to/replaced by 'telepathy-qt'"; # Converted to throw 2022-02-22
   telepathy_qt5 = throw "'telepathy_qt5' has been renamed to/replaced by 'libsForQt5.telepathy'"; # Converted to throw 2022-02-22
-  telepathy_salut = throw "'telepathy_salut' has been renamed to/replaced by 'telepathy-salut'"; # Converted to throw 2022-02-22
   telnet = throw "'telnet' has been renamed to/replaced by 'inetutils'"; # Converted to throw 2022-02-22
   terminus = throw "terminus has been removed, it was unmaintained in nixpkgs"; # Added 2021-08-21
   terraform-provider-ibm = throw "'terraform-provider-ibm' has been renamed to/replaced by 'terraform-providers.ibm'"; # Converted to throw 2022-02-22
@@ -1330,6 +1359,7 @@ mapAliases ({
   tex-gyre-pagella-math = throw "'tex-gyre-pagella-math' has been renamed to/replaced by 'tex-gyre-math.pagella'"; # Converted to throw 2022-02-22
   tex-gyre-schola-math = throw "'tex-gyre-schola-math' has been renamed to/replaced by 'tex-gyre-math.schola'"; # Converted to throw 2022-02-22
   tex-gyre-termes-math = throw "'tex-gyre-termes-math' has been renamed to/replaced by 'tex-gyre-math.termes'"; # Converted to throw 2022-02-22
+  textadept11 = textadept; # Added 2022-06-07
   tftp_hpa = throw "'tftp_hpa' has been renamed to/replaced by 'tftp-hpa'"; # Converted to throw 2022-02-22
   thunderbird-68 = throw "Thunderbird 68 reached end of life with its final release 68.12.0 on 2020-08-25";
   thunderbird-bin-68 = thunderbird-68;
@@ -1356,10 +1386,10 @@ mapAliases ({
   trebleshot = throw "trebleshot has been removed. It was archived upstream, so it's considered abandoned";
   trilium = throw "trilium has been removed. Please use trilium-desktop instead"; # Added 2020-04-29
   truecrypt = throw "'truecrypt' has been renamed to/replaced by 'veracrypt'"; # Converted to throw 2022-02-22
-  tshark = throw "'tshark' has been renamed to/replaced by 'wireshark-cli'"; # Converted to throw 2022-02-22
   tuijam = throw "tuijam has been removed because Google Play Music was discontinued"; # Added 2021-03-07
   turbo-geth = throw "turbo-geth has been renamed to erigon"; # Added 2021-08-08
   twister = throw "twister has been removed: abandoned by upstream and python2-only"; # Added 2022-04-26
+  tychus = throw "tychus has been dropped due to the lack of maintenance from upstream since 2018"; # Added 2022-06-03
   typora = throw "Newer versions of typora use anti-user encryption and refuse to start. As such it has been removed"; # Added 2021-09-11
 
   ### U ###
@@ -1427,7 +1457,9 @@ mapAliases ({
   winpdb = throw "winpdb has been removed: abandoned by upstream"; # Added 2022-04-22
   winusb = throw "'winusb' has been renamed to/replaced by 'woeusb'"; # Converted to throw 2022-02-22
   wireguard = throw "'wireguard' has been renamed to/replaced by 'wireguard-tools'"; # Converted to throw 2022-02-22
+  wormhole-rs = magic-wormhole-rs; # Added 2022-05-30. preserve, reason: Arch package name, main binary name
   wmii_hg = wmii;
+  ws = throw "ws has been dropped due to the lack of maintenance from upstream since 2018"; # Added 2022-06-03
   wxmupen64plus = throw "wxmupen64plus was removed because the upstream disappeared"; # Added 2022-01-31
 
   ### X ###
@@ -1445,6 +1477,7 @@ mapAliases ({
   xineLib = xine-lib; # Added 2021-04-27
   xineUI = xine-ui; # Added 2021-04-27
   xmonad_log_applet_gnome3 = throw "'xmonad_log_applet_gnome3' has been renamed to/replaced by 'xmonad_log_applet'"; # Converted to throw 2022-02-22
+  xmpp-client = throw "xmpp-client has been dropped due to the lack of maintanence from upstream since 2017"; # Added 2022-06-02
   xmpppy = throw "xmpppy has been removed from nixpkgs as it is unmaintained and python2-only";
   xp-pen-g430 = pentablet-driver; # Added 2020-05-03
   xpf = throw "xpf has been removed: abandoned by upstream"; # Added 2022-04-26
@@ -1487,6 +1520,19 @@ mapAliases ({
   ocaml_4_01_0 = throw "'ocamlPackages_4_01_0.ocaml' has been renamed to/replaced by 'ocaml-ng.ocamlPackages_4_01_0.ocaml'"; # Converted to throw 2022-02-22
   ocaml_4_02 = throw "'ocamlPackages_4_02.ocaml' has been renamed to/replaced by 'ocaml-ng.ocamlPackages_4_02.ocaml'"; # Converted to throw 2022-02-22
   ocaml_4_03 = throw "'ocamlPackages_4_03.ocaml' has been renamed to/replaced by 'ocaml-ng.ocamlPackages_4_03.ocaml'"; # Converted to throw 2022-02-22
+
+  ocamlformat_0_11_0 = throw "ocamlformat_0_11_0 has been removed in favor of newer versions"; # Added 2022-06-01
+  ocamlformat_0_12 = throw "ocamlformat_0_12 has been removed in favor of newer versions"; # Added 2022-06-01
+  ocamlformat_0_13_0 = throw "ocamlformat_0_13_0 has been removed in favor of newer versions"; # Added 2022-06-01
+  ocamlformat_0_14_0 = throw "ocamlformat_0_14_0 has been removed in favor of newer versions"; # Added 2022-06-01
+  ocamlformat_0_14_1 = throw "ocamlformat_0_14_1 has been removed in favor of newer versions"; # Added 2022-06-01
+  ocamlformat_0_14_2 = throw "ocamlformat_0_14_2 has been removed in favor of newer versions"; # Added 2022-06-01
+  ocamlformat_0_14_3 = throw "ocamlformat_0_14_3 has been removed in favor of newer versions"; # Added 2022-06-01
+  ocamlformat_0_15_0 = throw "ocamlformat_0_15_0 has been removed in favor of newer versions"; # Added 2022-06-01
+  ocamlformat_0_15_1 = throw "ocamlformat_0_15_1 has been removed in favor of newer versions"; # Added 2022-06-01
+  ocamlformat_0_16_0 = throw "ocamlformat_0_16_0 has been removed in favor of newer versions"; # Added 2022-06-01
+  ocamlformat_0_17_0 = throw "ocamlformat_0_17_0 has been removed in favor of newer versions"; # Added 2022-06-01
+  ocamlformat_0_18_0 = throw "ocamlformat_0_18_0 has been removed in favor of newer versions"; # Added 2022-06-01
 
   zabbix44 = throw ''
     Zabbix 4.4 is end of life. For details on upgrading to Zabbix 5.0 look at
@@ -1547,6 +1593,7 @@ mapAliases ({
   todolist = throw "todolist is now ultralist"; # Added 2020-12-27
   tor-browser-bundle = throw "tor-browser-bundle was removed because it was out of date and inadequately maintained. Please use tor-browser-bundle-bin instead"; # Added 2020-01-10
   tor-browser-unwrapped = throw "tor-browser-unwrapped was removed because it was out of date and inadequately maintained. Please use tor-browser-bundle-bin instead"; # Added 2020-01-10
+  torchat = throw "torchat was removed because it was broken and requires Python 2"; # added 2022-06-05
   ttyrec = ovh-ttyrec; # Added 2021-01-02
   zplugin = zinit; # Added 2021-01-30
 

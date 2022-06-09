@@ -1,6 +1,7 @@
 { lib
 , aws-sdk-cpp
 , boehmgc
+, curl
 , callPackage
 , fetchFromGitHub
 , fetchurl
@@ -31,7 +32,7 @@ let
 
   common = args:
     callPackage
-      (import ./common.nix ({ inherit lib fetchFromGitHub; } // args))
+      (import ./common.nix ({ inherit lib fetchFromGitHub curl; } // args))
       {
         inherit Security storeDir stateDir confDir;
         boehmgc = boehmgc-nix;
@@ -85,7 +86,12 @@ in lib.makeExtensible (self: {
     sha256 = "sha256-zldZ4SiwkISFXxrbY/UdwooIZ3Z/I6qKxtpc3zD0T/o=";
   };
 
-  stable = self.nix_2_8;
+  nix_2_9 = common {
+    version = "2.9.1";
+    sha256 = "sha256-qNL3lQPBsnStkru3j1ajN/H+knXI+X3dku8/dBfSw3g=";
+  };
+
+  stable = self.nix_2_9;
 
   # remember to backport updates to the stable branch!
   unstable = lib.lowPrio (common rec {
