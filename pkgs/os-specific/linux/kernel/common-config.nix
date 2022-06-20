@@ -289,6 +289,9 @@ let
       # Intel GVT-g graphics virtualization supports 64-bit only
       DRM_I915_GVT = whenAtLeast "4.16" yes;
       DRM_I915_GVT_KVMGT = whenAtLeast "4.16" module;
+    } // optionalAttrs (stdenv.hostPlatform.system == "aarch64-linux") {
+      # enable HDMI-CEC on RPi boards
+      DRM_VC4_HDMI_CEC = whenAtLeast "4.14" yes;
     };
 
     sound = {
@@ -917,6 +920,9 @@ let
       TASK_DELAY_ACCT = yes;
       TASK_XACCT = yes;
       TASK_IO_ACCOUNTING = yes;
+
+      # Fresh toolchains frequently break -Werror build for minor issues.
+      WERROR = whenAtLeast "5.15" no;
     } // optionalAttrs (stdenv.hostPlatform.system == "x86_64-linux" || stdenv.hostPlatform.system == "aarch64-linux") {
       # Enable CPU/memory hotplug support
       # Allows you to dynamically add & remove CPUs/memory to a VM client running NixOS without requiring a reboot

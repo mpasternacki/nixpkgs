@@ -11,11 +11,11 @@
 # Note: when upgrading this package, please run the list-missing-tools.sh script as described below!
 python3Packages.buildPythonApplication rec {
   pname = "diffoscope";
-  version = "215";
+  version = "216";
 
   src = fetchurl {
     url = "https://diffoscope.org/archive/diffoscope-${version}.tar.bz2";
-    sha256 = "sha256-OiAuR4uY9m6322d93JMFFQrXMLv6XD3D24j7K7BRl10=";
+    sha256 = "sha256-KSmC2mNNzsC2H5xOOQ/3gODsSvFQD95XGtrzbDud0W0=";
   };
 
   outputs = [ "out" "man" ];
@@ -77,6 +77,9 @@ python3Packages.buildPythonApplication rec {
     # fails because it fails to determine llvm version
     "test_item3_deflate_llvm_bitcode"
 
+    # OSError: [Errno 84] Invalid or incomplete multibyte or wide character: b'/build/pytest-of-nixbld/pytest-0/\xf0(\x8c('
+    "test_non_unicode_filename"
+
     # disable formatting tests because they can break on black updates
     "test_code_is_black_clean"
   ] ++ lib.optionals stdenv.isDarwin [
@@ -122,7 +125,7 @@ python3Packages.buildPythonApplication rec {
     '';
     homepage = "https://diffoscope.org/";
     license = licenses.gpl3Plus;
-    maintainers = with maintainers; [ dezgeg ma27 danielfullmer ];
+    maintainers = with maintainers; [ dezgeg danielfullmer ];
     platforms = platforms.unix;
   };
 }

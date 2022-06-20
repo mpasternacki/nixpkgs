@@ -29,7 +29,6 @@
 let
   defaultOverrides = [
     # Override the version of some packages pinned in Home Assistant's setup.py and requirements_all.txt
-    (mkOverride "python-slugify" "4.0.1" "sha256-aaUXdm4AwSaOW7/A0BCgqFCN4LGNMK1aH/NX+K5yQnA=")
 
     # pytest-aiohttp>0.3.0 breaks home-assistant tests
     (self: super: {
@@ -101,6 +100,17 @@ let
       });
     })
 
+    (self: super: {
+      python-slugify = super.python-slugify.overridePythonAttrs (oldAttrs: rec {
+        pname = "python-slugify";
+        version = "4.0.1";
+        src = super.fetchPypi {
+          inherit pname version;
+          hash = "sha256-aaUXdm4AwSaOW7/A0BCgqFCN4LGNMK1aH/NX+K5yQnA=";
+        };
+      });
+    })
+
     # Pinned due to API changes in 0.4.0
     (self: super: {
       vilfo-api-client = super.vilfo-api-client.overridePythonAttrs (oldAttrs: rec {
@@ -166,7 +176,7 @@ let
   extraPackagesFile = writeText "home-assistant-packages" (lib.concatMapStringsSep "\n" (pkg: pkg.pname) extraBuildInputs);
 
   # Don't forget to run parse-requirements.py after updating
-  hassVersion = "2022.6.4";
+  hassVersion = "2022.6.6";
 
 in python.pkgs.buildPythonApplication rec {
   pname = "homeassistant";
@@ -184,7 +194,7 @@ in python.pkgs.buildPythonApplication rec {
     owner = "home-assistant";
     repo = "core";
     rev = version;
-    hash = "sha256-ec6f8H9nU2edsailp1OCPwTFXnPm+NRqNha6Gk3xN44=";
+    hash = "sha256-scwj3VrSoFk/pSVzfwvGFM5fRci3+7iqr7TAwLantFQ=";
   };
 
   # leave this in, so users don't have to constantly update their downstream patch handling
@@ -200,6 +210,7 @@ in python.pkgs.buildPythonApplication rec {
       "attrs"
       "awesomeversion"
       "bcrypt"
+      "cryptography"
       "httpx"
       "PyJWT"
     ];
