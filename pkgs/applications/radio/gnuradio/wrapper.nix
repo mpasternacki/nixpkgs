@@ -152,6 +152,9 @@ let
               if [[ -d ${lib.getBin pkg}/bin/ ]]; then
                 lndir -silent ${pkg}/bin ./bin
               fi
+              if [[ -d ${pkg}/${unwrapped.python.sitePackages}/ ]]; then
+                lndir -silent ${pkg}/${unwrapped.python.sitePackages} ./${unwrapped.python.sitePackages}
+              fi
             '') extraPackages)
           )
         }
